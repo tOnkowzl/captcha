@@ -1,4 +1,4 @@
-package main
+package captcha
 
 import (
 	"testing"
@@ -59,8 +59,9 @@ func TestGenerateCaptcha(t *testing.T) {
 	}
 
 	for _, v := range testCases {
-		actual := generateCaptcha(v.format, v.leftOperand, v.operator, v.rightOperand)
+		actual, err := generateCaptcha(v.format, v.leftOperand, v.operator, v.rightOperand)
 
+		assert.NoError(t, err)
 		assert.Equal(t, v.expected, actual)
 	}
 }
