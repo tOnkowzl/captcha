@@ -26,9 +26,8 @@ var (
 )
 
 func Generate(f, lo, op, ro int) string {
-	result := map[int]string{
+	return map[int]string{
 		0: fmt.Sprintf("%s %s %d", operand[lo], operator[op], ro),
 		1: fmt.Sprintf("%d %s %s", lo, operator[op], operand[ro]),
-	}
-	return result[f]
+	}[f]
 }
