@@ -59,9 +59,8 @@ func TestGenerate(t *testing.T) {
 	}
 
 	for _, v := range testCases {
-		actual, err := Generate(v.format, v.leftOperand, v.operator, v.rightOperand)
+		actual := Generate(v.format, v.leftOperand, v.operator, v.rightOperand)
 
-		assert.NoError(t, err)
 		assert.Equal(t, v.expected, actual)
 	}
 }
