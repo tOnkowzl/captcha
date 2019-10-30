@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGenerateCaptcha(t *testing.T) {
+func TestGenerate(t *testing.T) {
 	testCases := []struct {
 		format       int
 		leftOperand  int
@@ -59,7 +59,7 @@ func TestGenerateCaptcha(t *testing.T) {
 	}
 
 	for _, v := range testCases {
-		actual, err := generateCaptcha(v.format, v.leftOperand, v.operator, v.rightOperand)
+		actual, err := Generate(v.format, v.leftOperand, v.operator, v.rightOperand)
 
 		assert.NoError(t, err)
 		assert.Equal(t, v.expected, actual)

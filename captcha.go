@@ -13,6 +13,7 @@ var (
 	}
 
 	operand = map[int]string{
+		0: "zero",
 		1: "one",
 		2: "two",
 		3: "three",
@@ -25,7 +26,7 @@ var (
 	}
 )
 
-func generateCaptcha(f, lo, op, ro int) (string, error) {
+func Generate(f, lo, op, ro int) (string, error) {
 	opr, ok := operator[op]
 	if !ok {
 		return "", errors.New("unsupport operator")
